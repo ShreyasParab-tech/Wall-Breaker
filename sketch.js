@@ -144,10 +144,11 @@ ball.bounceOff(firestand1)
 ball.bounceOff(firestand2)
 
 playerPaddle.collide(edges)
-}
-if(keyDown("space")){
+  if(keyDown("space")){
   gameState=PLAY
 }
+}
+
 
   playerPaddle.x=World.mouseX
 
