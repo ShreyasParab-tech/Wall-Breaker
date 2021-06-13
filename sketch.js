@@ -21,8 +21,7 @@ function setup() {
   createCanvas(800,750);
   ball = createSprite(random(200,700),300, 30,30);
   ball.shapeColor = "red"
-  ball.velocityX=3
-  ball.velocityY=5
+  
 
   playerPaddle = createSprite(400,630,150,30)
   
@@ -114,12 +113,17 @@ function setup() {
 
   
 
-  
+  ball.velocityX=3
+  ball.velocityY=5
 }
 
 function draw() {
   background(0,0,0);  
   
+  
+  
+
+
 if(gameState===SERVE){
   fill("white")
   textSize(30)
@@ -144,10 +148,11 @@ ball.bounceOff(firestand1)
 ball.bounceOff(firestand2)
 
 playerPaddle.collide(edges)
-  if(keyDown("space")){
+if(keyDown("space")){
   gameState=PLAY
 }
 }
+
 
 
   playerPaddle.x=World.mouseX
@@ -291,7 +296,7 @@ if(gameState===END2){
   fill("coral")
   textSize(50)
   text("YOU LOSE",260,350)
-  fill("white")
+  
   
   
   }
